@@ -1,0 +1,13 @@
+version: '3'
+services:
+  front:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.front
+    container_name: collect-news-front
+    volumes:
+      - .:/front/src/app # ローカルとコンテナ内の同期
+    command: sh -c "yarn start"
+    ports:
+      - "3000:3000"
+    stdin_open: true
