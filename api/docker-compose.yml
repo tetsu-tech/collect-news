@@ -10,4 +10,4 @@ services:
       - '8000:8000'
     volumes:
       - .:/api/src
-    command: yarn dev
+    command: sh -c 'npx tsc & yarn dev'
