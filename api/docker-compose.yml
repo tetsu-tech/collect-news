@@ -1,0 +1,13 @@
+version: '3'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.api
+    container_name: collect-news-api
+    tty: true
+    ports:
+      - '8000:8000'
+    volumes:
+      - .:/api/src
+    command: sh -c 'npx tsc & yarn dev'
